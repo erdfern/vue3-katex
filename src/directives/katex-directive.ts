@@ -1,23 +1,22 @@
-import type { Directive } from "vue";
-import katex from "katex";
+import { render } from "katex";
 import renderMathInElement from "katex/contrib/auto-render";
-import type { VueKatexOptions } from "../types";
+import type { KatexDirective, VueKatexOptions } from "../types";
 
 export const createKatexDirective = (globalOptions: VueKatexOptions = {}) => {
-  const katexDirective: Directive = {
+  const katexDirective: KatexDirective = {
     mounted(el, binding) {
-      const localOptions = binding.value?.options || {};
+      const localOptions = binding.value.options || {};
       const allOptions = { ...globalOptions, ...localOptions };
 
       if (binding.arg === "auto") {
         renderMathInElement(el, allOptions);
       } else {
-        const expression = binding.value?.expression || binding.value || "";
+        const expression = binding.value.expression || "";
         const options = {
           ...allOptions,
           displayMode: binding.arg === "display",
         };
-        katex.render(expression, el, options);
+        render(expression, el, options);
       }
     },
   };

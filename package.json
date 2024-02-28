@@ -46,6 +46,7 @@
     "changelogen": "^0.5.5",
     "eslint": "^8.57.0",
     "eslint-config-unjs": "^0.2.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-vue": "^9.22.0",
     "mkdist": "^1.4.0",
     "prettier": "^3.2.5",

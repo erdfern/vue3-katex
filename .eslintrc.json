@@ -18,6 +18,10 @@
         "@typescript-eslint",
         "vue"
     ],
-    "rules": {
-    }
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+    },
+    "rules": {}
 }

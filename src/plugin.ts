@@ -7,10 +7,10 @@ const pluginOptionsInjectionKey: InjectionKey<VueKatexOptions> =
 
 const VueKatexPlugin: Plugin = {
   install(app: App, options: VueKatexOptions = {}) {
-    app.component("MathRenderer", import("./components/MathRenderer.vue"));
-
     const katexDirective = createKatexDirective(options);
     app.directive("katex", katexDirective);
+
+    app.component("MathRenderer", import("./components/MathRenderer.vue"));
 
     app.provide<VueKatexOptions>(pluginOptionsInjectionKey, options);
   },
