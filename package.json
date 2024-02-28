@@ -1,0 +1,60 @@
+{
+  "name": "vue3-katex",
+  "version": "0.2.4",
+  "repository": "https://github.com/erdfern/vue3-katex",
+  "author": "erdfern <npmjs.powdery263@passmail.net>",
+  "license": "MIT",
+  "keywords": [
+    "vue3",
+    "katex",
+    "components",
+    "directives"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs . && prettier -c src",
+    "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix && prettier -c src -w",
+    "prepack": "pnpm build",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "test": "pnpm lint && pnpm test:types",
+    "test:types": "vue-tsc --noEmit --skipLibCheck"
+  },
+  "peerDependencies": {
+    "katex": "^0.16.9",
+    "vue": "^3.4.20"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7",
+    "@types/node": "^20.11.21",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "changelogen": "^0.5.5",
+    "eslint": "^8.57.0",
+    "eslint-config-unjs": "^0.2.1",
+    "eslint-plugin-vue": "^9.22.0",
+    "mkdist": "^1.4.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.2.2",
+    "unbuild": "^2.0.0",
+    "vue-tsc": "^1.8.27"
+  },
+  "packageManager": "pnpm@8.15.4",
+  "dependencies": {
+    "corepack": "^0.25.2"
+  }
+}
