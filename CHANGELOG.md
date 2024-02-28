@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v0.2.5
+
+
+### 🏡 Chore
+
+- Clean ([da3d121](https://github.com/erdfern/vue3-katex/commit/da3d121))
+
+### ❤️ Contributors
+
+- Erdfern <rexsomnia@pm.me>
+
 ## v0.2.4
 
 [compare changes](https://github.com/erdfern/vue3-katex/compare/v0.2.2...v0.2.4)
